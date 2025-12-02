@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="demo.css">
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .solid {
+        border: 3px solid red;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .dotted {
+        border: 3px dotted blue;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .dashed {
+        border: 3px dashed green;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .double {
+        border: 4px double purple;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .groove {
+        border: 6px groove teal;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .ridge {
+        border: 6px ridge orange;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .inset {
+        border: 6px inset brown;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .outset {
+        border: 6px outset magenta;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .radius {
+        border: 3px solid black;
+        border-radius: 15px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+     .content-box {
+            border: 5px solid blue; 
+            margin: 20px;           
+            padding: 15px;          
+            font-size: 18px;
+        }
+  .container {
+        border: 3px solid black;   
+        padding: 20px;            
+        margin-top: 40px;         
+        margin-bottom: 40px;      
+        margin-left: 50px;        
+        margin-right: 50px;       
+        font-size: 18px;          
+        line-height: 1.6;
+    }   
+    .margin-top {
+        border: 2px solid red;
+        padding: 15px;
+        margin-top: 50px; /* Only top margin */
+        font-size: 18px;
+    }
+
+    .margin-bottom {
+        border: 2px solid green;
+        padding: 15px;
+        margin-bottom: 50px; /* Only bottom margin */
+        font-size: 18px;
+    }
+
+    .margin-left {
+        border: 2px solid blue;
+        padding: 15px;
+        margin-left: 50px; /* Only left margin */
+        font-size: 18px;
+    }
+
+    .margin-right {
+        border: 2px solid purple;
+        padding: 15px;
+        margin-right: 50px; 
+        font-size: 18px;
+    }    
+     .padded-box {
+        border: 3px solid black;  
+        padding: 30px;           
+        font-size: 18px;
+        line-height: 1.6;
+        margin: 20px;            
+    }
+    
+    a.google-link {
+        color: green;             
+        text-decoration: none;
+        cursor: pointer;          
+        font-size: 20px;
+        transition: color 0.3s ease; 
+    }
+
+    a.google-link:visited {
+        color: purple;            
+    }
+
+    a.google-link:hover {
+        color: orange;           
+        text-decoration: underline; 
+    }
+</style>
+</head>
+<body style="font-family: Arial, sans-serif;">
+
+    <p class="one"><b>Welcome to CSS session</b></p>
+    <p class="second">CSS (Cascading Style Sheets) is a stylesheet language used to control the appearance of HTML elements on a webpage. It allows you to style text, layout, colors, backgrounds, borders, and more. CSS separates design from structure, making websites visually appealing, responsive, and easier to maintain across multiple pages</p>
+    <h2>Small Paragraph</h2>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque similique odio placeat ducimus eos <span style="color: brown;">Stylish</span> eligendi tenetur ullam delectus, nesciunt perferendis voluptate voluptatum voluptatibus voluptates? Dolores nemo inventore aliquid alias?</p><hr>
+    </div>
+<h1 class="title">My Book</h1>
+
+    <h2 class="chapter">Chapter 1: Introduction</h2>
+    <p class="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor,
+        nisl id gravida posuere, ipsum sapien sollicitudin augue, a volutpat
+        velit felis non lectus. Aliquam nec elit nulla. Quisque ullamcorper
+        mauris ut orci facilisis, vel suscipit velit luctus. Donec sit amet
+        diam magna. Nulla facilisi. Sed nec nisi non ipsum fermentum luctus.
+        Integer elementum faucibus dignissim.
+    </p>
+
+    <h2 class="chapter">Chapter 2: The Story Begins</h2>
+    <p class="content">
+        In hac habitasse platea dictumst. Etiam aliquet, dolor in finibus
+        convallis, justo lectus rutrum ipsum, et consequat arcu neque ut dui.
+        Vestibulum id dictum sapien, id lobortis mauris. Sed dignissim mollis
+        lectus, eget tincidunt odio vulputate at.
+    </p>
+
+    <h2 class="chapter">Chapter 3: Conclusion</h2>
+    <p class="content">
+        Aenean eu urna in massa semper vehicula. Donec tincidunt, sem a
+        scelerisque tincidunt, velit magna egestas arcu, non ullamcorper eros
+        nulla vitae nibh. Morbi nec lorem odio. Integer consequat.
+    </p>
+<h2 style="text-align:center;">Bordered Paragraphs</h2>
+
+    <p class="box solid">
+    This paragraph has a solid border. A solid border is a single straight line around the content, making it clear and easy to see. It is commonly used when highlighting important information or separating different sections of a web page. The strong and bold appearance of a solid border makes it very useful for headings, notes, or alert messages. Web designers choose this style because it looks neat and professional. Solid borders are also great for drawing attention to buttons, images, or highlighted areas, especially when used with contrasting colors that stand out well against the background of the webpage.
+</p>
+
+<p class="box dotted">
+    This paragraph has a dotted border. A dotted border is formed using small dots placed evenly around the element. It is often used for decorative purposes or when the content inside the box is not extremely important. The dotted style appears soft and light, giving a simple and fun look to the design. In educational or children-related websites, this type of border is commonly used because it creates a friendly appearance. Although dotted borders are not as strong visually as solid borders, they help separate content while maintaining a playful and attractive layout on the webpage where it is used.
+</p>
+
+<p class="box dashed">
+    This paragraph has a dashed border. A dashed border looks like a broken line created using small dashes instead of a continuous line. It is commonly used to represent editable sections, temporary areas, or hints in forms and online documents. The broken style helps users understand that the content inside may change or require attention. Designers often choose dashed borders in layouts where they want to create separation without too much boldness. It is effective in outlines, image placeholders, or quick notes. The dashed style is useful when we want the border to look noticeable yet not overly strong or distracting visually.
+</p>
+
+<p class="box double">
+    This paragraph has a double border. A double border contains two parallel lines, creating a more decorative and fancy look. It is usually used to highlight something special or formal, such as certificates, titles, announcements, and important message boxes. The double effect makes the element look more attractive and stronger than a single straight line border. Web designers use this border when they want a more stylish presentation without adding any images or extra decorations. The inner space between the two lines creates a visual thickness that stands out very well on the screen, especially when combined with bold colors.
+</p>
+
+<p class="box groove">
+    This paragraph has a groove border. Groove borders create a carved-in or 3D effect that gives a sense of depth to the box. This style makes the border look like it is engraved or cut into the page surface. The effect becomes visible when a proper border color is chosen because the browser adds light and shadow details automatically. Groove borders are mostly used in designs that want to appear realistic or slightly textured. They are a good choice for panels, toolboxes, or special content areas. With its interesting appearance, a groove border adds creativity and uniqueness to any webpage layout.
+</p>
+
+<p class="box ridge">
+    This paragraph has a ridge border. The ridge style is the opposite of the groove border, meaning the border looks raised instead of carved. It provides a 3D effect that looks like the border is popping outward from the screen. Web designers use ridge borders to make certain sections appear more prominent or clickable. This border style works well in themes with depth, shadows, or realistic visual elements. Though not very common in modern flat designs, ridge borders still offer an appealing style when creating fancy layouts. The combination of color and shading helps the border stand out beautifully.
+</p>
+
+<p class="box inset">
+    This paragraph has an inset border. Inset borders make the element appear like it is pressed inside the screen. It gives a deep look as if the content is sunken into the background. This style is mainly used in form elements, text boxes, or areas where the user interacts with the website. The visual impression makes it perfect for buttons or panels because it suggests a physical pressable surface. Designers use inset borders to create realistic UI components, especially when they want to show that the element is not active or currently being pressed down. It adds depth to the layout.
+</p>
+
+<p class="box outset">
+    This paragraph has an outset border. Outset borders create the opposite effect of inset borders by making the area look raised outward from the page. This border type is useful when designing clickable buttons or interactive areas because it gives a 3D feel that attracts the user's attention. The combination of light and shadow added by the browser creates a raised surface that appears more prominent visually. Web designers apply outset borders to emphasize a container or to give a stylish look to the layout. It adds interest to the design, especially when used with bright or contrasting background colors on the webpage.
+</p>
+
+<p class="box radius">
+    This paragraph has a rounded border. Rounded borders are created using the border-radius property, making the corners smooth and curved instead of sharp. This design style is very popular in modern UI and web development because it looks clean, friendly, and more appealing than traditional square corners. Many websites use rounded borders for buttons, cards, images, and information sections. The softness of the corners creates a sense of comfort and makes the layout more attractive to viewers. Rounded borders help achieve a professional and modern appearance without needing extra graphics or complex design elements. They are simple yet effective.
+</p>
+<div class="content-box">
+        This is a paragraph inside a div.  
+        It has a border, margin, and padding applied using CSS inside the style tag.  
+        Margin gives space outside, border shows the outline, and padding creates space inside.
+    </div>
+<div class="container">
+        This is a paragraph inside a div. The div has separate margins applied for top, bottom, left, and right. 
+        Margin-top adds space above the div, margin-bottom adds space below, margin-left pushes it away from the left side, 
+        and margin-right pushes it away from the right side. Padding keeps the text away from the border. Borders make it visible.
+    </div>  
+    <div class="margin-top">
+        This div has <b>margin-top</b>. Space is added above the div.
+    </div>
+
+    <div class="margin-bottom">
+        This div has <b>margin-bottom</b>. Space is added below the div.
+    </div>
+
+    <div class="margin-left">
+        This div has <b>margin-left</b>. Space is added on the left side.
+    </div>
+
+    <div class="margin-right">
+        This div has <b>margin-right</b>. Space is added on the right side.
+    </div>
+ <div class="padded-box">
+        This paragraph is inside a div with padding applied. Padding creates space between the content and the border of the div. 
+        It makes the text look neat and not crowded. You can adjust padding values to control the spacing inside the box.
+    </div>   
+<p>
+        Visit Google: 
+        <a class="google-link" href="https://www.google.com" target="_blank">
+            Go to Google &#10148; 
+        </a>
+    </p>
+
+</body>
+</html>
