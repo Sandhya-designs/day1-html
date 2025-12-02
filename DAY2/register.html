@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - MySite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #667eea, #764ba2);
+        }
+
+        .register-container {
+            background: #ffffffcc;
+            padding: 25px;
+            width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #3d2460;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+        }
+
+        button {
+            width: 100%;
+            border: none;
+            padding: 12px;
+            background: #3d2460;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #2a1744;
+        }
+
+        .login-text {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .login-text a {
+            color: #3d2460;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .login-text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-container">
+        <h2>Register</h2>
+
+        <form action="login.html" method="get">
+            <label>Name</label>
+            <input type="text" required>
+
+            <label>Email</label>
+            <input type="email" required>
+
+            <label>Password</label>
+            <input type="password" required>
+
+            <label>Department</label>
+            <select required>
+                <option value="" disabled selected>Select Department</option>
+                <option>Web Development</option>
+                <option>Data Science</option>
+                <option>AI & ML</option>
+                <option>Cyber Security</option>
+                <option>Software Engineering</option>
+            </select>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <p class="login-text">
+            Already have an account?
+            <a href="login.html">Login here</a>
+        </p>
+    </div>
+
+</body>
+</html>
