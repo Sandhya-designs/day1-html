@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <div class="max-w-4xl mx-auto bg-white shadow-md rounded p-6">
+        <h1 class="text-2xl font-bold mb-4 text-center">Student Dashboard</h1>
+
+        <!-- Add Student -->
+        <div class="mb-6">
+            <h2 class="font-semibold mb-2">Add Student</h2>
+            <form id="studentForm" class="flex flex-col md:flex-row gap-2">
+                <input type="text" id="name" placeholder="Name" class="border p-2 rounded flex-1">
+                <input type="number" id="age" placeholder="Age" class="border p-2 rounded flex-1">
+                <input type="text" id="grade" placeholder="Grade" class="border p-2 rounded flex-1">
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add</button>
+            </form>
+        </div>
+
+        <!-- Search Student -->
+        <div class="mb-6">
+            <h2 class="font-semibold mb-2">Search Student by Name</h2>
+            <input type="text" id="searchInput" placeholder="Enter name to search" class="border p-2 rounded w-full">
+            <div id="searchResult" class="mt-2"></div>
+        </div>
+
+        <!-- Student Count -->
+        <div class="mb-4">
+            <h2 class="font-semibold mb-2">Total Students: <span id="studentCount">0</span></h2>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex gap-2 mb-4">
+            <button id="uppercaseBtn" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Uppercase Names</button>
+            <button id="gradeABtn" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Grade A Students</button>
+            <button id="showAllBtn" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Show All</button>
+        </div>
+
+        <!-- Student List -->
+        <div id="studentList" class="space-y-2">
+            <!-- Students will appear here -->
+        </div>
+    </div>
+
+    <script>
+        let students = [
+            { name: "Alice", age: 20, grade: "A" },
+            { name: "Bob", age: 21, grade: "B" },
+            { name: "Charlie", age: 19, grade: "C" }
+        ];
+
+        const studentList = document.getElementById('studentList');
+        const studentCount = document.getElementById('studentCount');
+        const studentForm = document.getElementById('studentForm');
+        const searchInput = document.getElementById('searchInput');
+        const searchResult = document.getElementById('searchResult');
+        const uppercaseBtn = document.getElementById('uppercaseBtn');
+        const gradeABtn = document.getElementById('gradeABtn');
+        const showAllBtn = document.getElementById('showAllBtn');
+
+        // Display students in the main list
+        function displayStudents(list) {
+            studentList.innerHTML = '';
+            if(list.length === 0){
+                studentList.innerHTML = '<p class="text-red-500 font-semibold">No students to show</p>';
+            } else {
+                list.forEach((student) => {
+                    const div = document.createElement('div');
+                    div.className = "border p-2 rounded flex justify-between items-center bg-gray-50";
+                    div.innerHTML = `
+                        <div>
+                            <p><strong>Name:</strong> ${student.name}</p>
+                            <p><strong>Age:</strong> ${student.age}</p>
+                            <p><strong>Grade:</strong> ${student.grade}</p>
+                        </div>
+                    `;
+                    studentList.appendChild(div);
+                });
+            }
+            // Update count using reduce
+            const count = students.reduce((acc) => acc + 1, 0);
+            studentCount.textContent = count;
+        }
+
+        // Add student
+        studentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const age = parseInt(document.getElementById('age').value);
+            const grade = document.getElementById('grade').value.trim().toUpperCase();
+
+            if(name && age && grade){
+                students.push({ name, age, grade });
+                displayStudents(students);
+                studentForm.reset();
+                searchResult.innerHTML = ""; // Clear search
+            }
+        });
+
+        // Search student by name
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.trim().toLowerCase();
+            if(query === "") {
+                searchResult.innerHTML = "";
+                return;
+            }
+            const found = students.filter(student => student.name.toLowerCase() === query);
+            if(found.length > 0){
+                searchResult.innerHTML = found.map(s => `
+                    <div class="border p-2 rounded bg-gray-50 mt-2">
+                        <p><strong>Name:</strong> ${s.name}</p>
+                        <p><strong>Age:</strong> ${s.age}</p>
+                        <p><strong>Grade:</strong> ${s.grade}</p>
+                    </div>
+                `).join('');
+            } else {
+                searchResult.innerHTML = '<p class="text-red-500 font-semibold mt-2">Student not found</p>';
+            }
+        });
+
+        // Uppercase all names
+        uppercaseBtn.addEventListener('click', () => {
+            const uppercased = students.map(s => ({...s, name: s.name.toUpperCase()}));
+            displayStudents(uppercased);
+        });
+
+        // Filter grade A students
+        gradeABtn.addEventListener('click', () => {
+            const gradeA = students.filter(s => s.grade.toUpperCase() === 'A');
+            displayStudents(gradeA);
+        });
+
+        // Show all students
+        showAllBtn.addEventListener('click', () => displayStudents(students));
+
+        // Initial display
+        displayStudents(students);
+    </script>
+</body>
+</html>
